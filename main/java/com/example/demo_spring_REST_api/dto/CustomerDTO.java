@@ -1,14 +1,18 @@
 package com.example.demo_spring_REST_api.dto;
 
 import java.time.LocalDate;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Email;
 
 
 public class CustomerDTO {
 
-	@NotNull
+	
 	private Integer customerId;
+	@Email(message = "please provide valid email")
+	@NotNull(message="please enter email i said please")
 	private String emailId;
+	@NotNull(message="please enter name")
 	private String name;
 	private LocalDate dateOfBirth;
 
